@@ -1,0 +1,11 @@
+cd Data
+mkdir Fasta
+cd Fasta
+wget https://raw.githubusercontent.com/mhasoba/TheMulQuaBio/master/content/data/fasta/E.coli.fasta
+wget https://raw.githubusercontent.com/mhasoba/TheMulQuaBio/master/content/data/fasta/407228326.fasta
+wget https://raw.githubusercontent.com/mhasoba/TheMulQuaBio/master/content/data/fasta/407228412.fasta
+wc -l *.fasta
+tail -n +10 E.coli.fasta
+tail -n +10 E.coli.fasta | wc -m
+tail -n +10 *.fasta | wc -m
+grep -c [ATGC] E.coli.fasta
