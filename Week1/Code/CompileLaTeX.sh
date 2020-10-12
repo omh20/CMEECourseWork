@@ -1,7 +1,9 @@
 #!/bin/bash
 
 shopt -s nullglob
-
+function have_any {
+    [ $# -gt 0 ]
+}
 
 
 

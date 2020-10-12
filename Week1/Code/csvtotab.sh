@@ -13,9 +13,9 @@ if [ "$1" = "" ]
    exit    
 fi
 
-echo "Creating a comma delimited version of $1 ..."
-#echo cat $1 
-cat $1 | tr -s "$2" "$3" > $1.csv
-#cat $1.csv
+echo "Creating a space delimited version of $1 ..."
+echo cat $1 
+cat $1 | tr -s "$2" "$3" > $1.txt
+cat $1.tsv
 echo "Done!"
 exit
