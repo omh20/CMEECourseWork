@@ -1,10 +1,11 @@
-*Untitled*
-*evening*
-*.bbl
-*.bjg
-1.*
-*.aux
-*.log
-age-height*
-
+function have_any.*
 *.tmp
+.~ 
+age-height* 
+ *.log
+ *.aux 
+1.* 
+*.bjg 
+*.bbl 
+*evening* 
+*Untitled* 

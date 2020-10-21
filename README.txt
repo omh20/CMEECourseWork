@@ -8,4 +8,6 @@ Languages: Engish (UK)
 
 Dependencies: python3, LaTeX, R
 
+
 Project structure and Usage: The material for each week can be found in the Week folders. Each folder has a Data Sandbox and Code Directory.
+
