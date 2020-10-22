@@ -1,0 +1,50 @@
+#!/bin/bash
+#Author: Olivia o.haas@imperial.ac.uk
+#Script: UnixPrac1.txt
+#Desc: Unix Practical
+#Arguments: none
+#Date: Oct 2020
+
+## Make directory
+#############
+mkdir Fasta
+cd Fasta
+
+## Download files
+#######
+wget https://raw.githubusercontent.com/mhasoba/TheMulQuaBio/master/content/data/fasta/407228326.fasta
+wget https://raw.githubusercontent.com/mhasoba/TheMulQuaBio/master/content/data/fasta/407228412.fasta
+wget https://raw.githubusercontent.com/mhasoba/TheMulQuaBio/master/content/data/fasta/E.coli.fasta
+
+##Count lines of each file
+#######
+echo "The line count for each file is: "
+wc -l 407228326.fasta
+wc -l 407228412.fasta
+wc -l E.coli.fasta
+ 
+##Print genome sequence E.coli
+########
+echo "The sequence for E.coli genome is: " 
+tail -n +2 E.coli.fasta
+
+##The lenght of the E.coli genome
+######
+echo "The lenght of the E.coli genome is: " $(tail -n +2 E.coli.fasta | wc -m)
+
+##The number of "ATGC" sequences
+########
+echo "The number of ATCG sequences in E.coli genome is: " $(grep  -c ATGC E.coli.fasta)
+
+##AT to CG ratio
+########
+ATcount=$(grep -c AT E.coli.fasta)
+GCcount=$(grep -c GC E.coli.fasta)
+ATtoGCratio=$(echo "scale=4; $ATcount/$GCcount" | bc )
+echo "The AT/CG ratio is: " $ATtoGCratio
+
+##Remove files and directory
+#######
+ rm *
+ cd ..
+ rmdir Fasta
