@@ -1,36 +1,27 @@
-#!/usr/bin/env python3
-
-# Match with fasta input file 
-
-__appname__ = 'align_seq_fasta.py'
-__author__ = 'Olivia Haas o.haas@imperial.ac.uk'
-
-#Import sys
-import sys
-
+# Two example sequences to match
 #seq2 = "ATCGCCGGATTACGGG"
 #seq1 = "CAATTCGGAT"
 
 # Assign the longer sequence s1, and the shorter to s2
 # l1 is length of the longest, l2 that of the shortest
-#first_fasta_file = open('../Data/E.coli.fasta')
-#seq1 = first_fasta_file.read()
 
-#second_fasta_file = open('../Data/407228412.fasta')
-#seq2 = second_fasta_file.read()
-#second_fasta_file.close()
+with open('../Data/dnasequence.txt', 'r') as f:
+    seqlist = f.read().splitlines()
+print(seqlist)
 
-def definesquence(seq1, seq2):
-    l1 = len(seq1)
-    l2 = len(seq2)
-    if l1 >= l2:
-        s1 = seq1
-        s2 = seq2
-    else:
-        s1 = seq2
-        s2 = seq1
-        l1, l2 = l2, l1 # swap the two lengths
-    return s1, s2, l1, l2
+seq1 = seqlist[0]
+seq2 = seqlist[1]
+
+
+l1 = len(seq1)
+l2 = len(seq2)
+if l1 >= l2:
+    s1 = seq1
+    s2 = seq2
+else:
+    s1 = seq2
+    s2 = seq1
+    l1, l2 = l2, l1 # swap the two lengths
 
 # A function that computes a score by returning the number of matches starting
 # from arbitrary startpoint (chosen by user)
@@ -63,38 +54,18 @@ def calculate_score(s1, s2, l1, l2, startpoint):
 my_best_align = None
 my_best_score = -1
 
-def calculatebestscore(s1, s2, l1, l2, i):
-    for i in range(l1): # Note that you just take the last alignment with the highest score
-        z = calculate_score(s1, s2, l1, l2, i)
-        if z > my_best_score:
-            my_best_align = "." * i + s2 # think about what this is doing!
-            my_best_score = z 
+for i in range(l1): # Note that you just take the last alignment with the highest score
+    z = calculate_score(s1, s2, l1, l2, i)
+    if z > my_best_score:
+        my_best_align = "." * i + s2 # think about what this is doing!
+        my_best_score = z 
 print(my_best_align)
-#print(s1)
+print(s1)
 print("Best score:", my_best_score)
 
-# open default fasta files 
+my_best_score_str = str(my_best_score)
+my_best_align_str = str(my_best_align)
 
-
-def main(argv):
-    if len(argv) == 1: 
-        # open default fasta files 
-        first_fasta_file = open('../Data/E.coli.fasta')
-        seq1 = first_fasta_file.read()
-        first_fasta_file.close()
-
-        second_fasta_file = open('../Data/407228412.fasta')
-        seq2 = second_fasta_file.read()
-        second_fasta_file.close()
-    elif len(argv) == 2: 
-        print("Missing an input file")
-        return None
-    elif len(argv) == 3:
-        first_fasta_file = read.fasta(argv[2])
-        seq1 = first_fasta_file.read()
-        first_fasta_file.close()
-
-        second_fasta_file = read.fasta(argv[3])
-        seq2 = second_fasta_file.read()
-        second_fasta_file.close()
-
+f = open('../Results/bestresultsDNAalign.txt', 'w')
+f.write("For the sequences : " + seq1 + "and " + seq2 + '\n' + "The best align is :" + my_best_align_str + '\n' + "The best score is: " + my_best_score_str)
+f.close()
