@@ -1,0 +1,1406 @@
+Starting code feedback for Olivia, Week2
+
+Current Points = 100
+
+Note that: 
+(1) Major sections begin with a double "====" line 
+(2) Subsections begin with a single "====" line 
+(3) Code output or text file content are printed within single "*****" lines 
+
+======================================================================
+======================================================================
+Your Git repo size this week is about 1.57 MiB on disk 
+
+PART 1: Checking project workflow...
+
+Found the following directories in parent directory: .git, Feedback, Week1, Week2
+
+Found the following files in parent directory: README.txt, .gitignore, Week2.zip
+
+Checking for key files in parent directory...
+
+Found .gitignore in parent directory, great! 
+
+Printing contents of .gitignore:
+
+**********************************************************************
+function have_any.*
+*.tmp
+.~ 
+age-height* 
+ *.log
+ *.aux 
+1.* 
+*.bjg 
+*.bbl 
+*evening* 
+*Untitled* 
+
+**********************************************************************
+
+Found README in parent directory, named: README.txt
+
+Printing contents of README.txt:
+
+**********************************************************************
+My CMEE Coursework Repository
+
+Author: Olivia Haas, o.haas@imperial.ac.uk
+
+Description: Git Repository for the CMEE BootCamp 2020. It contains the weekly practicals and code. The guidlines and material for the BootCamp can be found here: https://mhasoba.github.io/TheMulQuaBio/intro.html
+
+Languages: Engish (UK)
+
+Dependencies: python3, LaTeX, R
+
+
+Project structure and Usage: The material for each week can be found in the Week folders. Each folder has a Data Sandbox and Code Directory.
+
+
+**********************************************************************
+
+======================================================================
+Looking for the weekly directories...
+
+Found 2 weekly directories: Week1, Week2
+
+The Week2 directory will be assessed 
+
+======================================================================
+======================================================================
+PART 2: Checking weekly code and workflow...
+
+======================================================================
+Assessing WEEK2...
+
+Found the following directories: Data, Code, Results, Sandbox
+
+Found the following files: 
+
+Checking for readme file in weekly directory...
+
+README file missing, 1 pt deducted
+
+Current Points = 99
+
+Results directory is empty - good! 
+
+Found 17 code files: tuple.py, boilerplate.py, basic_io2.py, test.py, oaks.py, cfexercises2.py, basic_io1.py, loops.py, align_fasta.py, dictionary.py, lc2.py, basic_io3.py, control_flow.py, cfexercises1.py, basic_csv.py, align_seqs.py, lc1.py
+
+======================================================================
+Testing script/code files...
+
+======================================================================
+Inspecting script file tuple.py...
+
+File contents are:
+
+**********************************************************************
+birds = ( ('Passerculus sandwichensis','Savannah sparrow',18.7),
+          ('Delichon urbica','House martin',19),
+          ('Junco phaeonotus','Yellow-eyed junco',19.5),
+          ('Junco hyemalis','Dark-eyed junco',19.6),
+          ('Tachycineata bicolor','Tree swallow',20.2),
+         )
+
+for i in birds:
+    print("The latin name is : ", i[0], '\n', "The common name is :", i[1], '\n', "The body mass is: ", i[2], '\n')
+# Birds is a tuple of tuples of length three: latin name, common name, mass.
+# write a (short) script to print these on a separate line or output block by species 
+# 
+# A nice example output is:
+# 
+# Latin name: Passerculus sandwichensis
+# Common name: Savannah sparrow
+# Mass: 18.7
+# ... etc.
+
+# Hints: use the "print" command! You can use list comprehensions!
+**********************************************************************
+
+Testing tuple.py...
+
+tuple.py is a Python script file;
+
+checking for docstrings...
+
+No functions, but no script-level docstring either
+2 pts deducted
+
+Current Points = 97
+
+Output (only first 500 characters): 
+
+
+**********************************************************************
+The latin name is :  Passerculus sandwichensis 
+ The common name is : Savannah sparrow 
+ The body mass is:  18.7 
+
+The latin name is :  Delichon urbica 
+ The common name is : House martin 
+ The body mass is:  19 
+
+The latin name is :  Junco phaeonotus 
+ The common name is : Yellow-eyed junco 
+ The body mass is:  19.5 
+
+The latin name is :  Junco hyemalis 
+ The common name is : Dark-eyed junco 
+ The body mass is:  19.6 
+
+The latin name is :  Tachycineata bicolor 
+ The common name is : Tree swallow
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.09817s
+
+======================================================================
+Inspecting script file boilerplate.py...
+
+File contents are:
+
+**********************************************************************
+#!bin/bash
+# Author: Olivia o.haas20@imperial.ac.uk
+# Script@ boilerplate.sh
+# Desc: simple boilerplate for shell scripts
+# Arguments: none
+# Date: Oct 2020
+
+echo -e "\n This is a shell script! \n"
+
+#exit
+**********************************************************************
+
+Testing boilerplate.py...
+
+boilerplate.py is a Python script file;
+
+checking for docstrings...
+
+No functions, but no script-level docstring either
+2 pts deducted
+
+Current Points = 95
+
+Output (only first 500 characters): 
+
+
+**********************************************************************
+
+**********************************************************************
+
+Encountered error (or warning):
+  File "boilerplate.py", line 8
+    echo -e "\n This is a shell script! \n"
+            ^
+SyntaxError: invalid syntax
+
+======================================================================
+Inspecting script file basic_io2.py...
+
+File contents are:
+
+**********************************************************************
+########################
+## FILE OUTPUT
+########################
+# Save the elements of a list to a FILE
+list_to_save = range(100)
+
+f = open('../Sandbox/testout.txt', 'w')
+for i in list_to_save:
+    f.write(str(i) + '/n')
+
+f.close()
+
+**********************************************************************
+
+Testing basic_io2.py...
+
+basic_io2.py is a Python script file;
+
+checking for docstrings...
+
+No functions, but no script-level docstring either
+2 pts deducted
+
+Current Points = 93
+
+Output (only first 500 characters): 
+
+
+**********************************************************************
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.09763s
+
+======================================================================
+Inspecting script file test.py...
+
+File contents are:
+
+**********************************************************************
+first_fasta_file = open('../Data/E.coli.fasta')
+seq1 = first_fasta_file.read()
+
+second_fasta_file = open('../Data/407228412.fasta')
+seq2 = second_fasta_file.read()
+second_fasta_file.close()
+**********************************************************************
+
+Testing test.py...
+
+test.py is a Python script file;
+
+checking for docstrings...
+
+No functions, but no script-level docstring either
+2 pts deducted
+
+Current Points = 91
+
+Output (only first 500 characters): 
+
+
+**********************************************************************
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.09784s
+
+======================================================================
+Inspecting script file oaks.py...
+
+File contents are:
+
+**********************************************************************
+## Finds just those taxa that are oak trees from a list of species 
+
+taxa = [ 'Quercus robur', 'Fraxinus excelsior', 'Pinus sylvestris', 'Quercus cerris', 'Quercus petraea', ]
+
+def is_an_oak(name):
+    return name.lower().startswith('quercus ')
+
+    ## Using for loops
+
+oaks_loops = set()
+for species in taxa:
+    if is_an_oak(species):
+        oaks_loops.add(species)
+print(oaks_loops)
+
+## Using list comprehensions
+oaks_lc = set([species for species in taxa if is_an_oak(species)])
+print(oaks_lc)
+
+## Get names in UPPER CASE using for loops 
+oaks_loops = set()
+for species in taxa: 
+    if is_an_oak(species):
+        oaks_loops.add(species.upper())
+print(oaks_loops)
+
+## set names in UPPER CASE using list comprenhension 
+oaks_lc = set([species.upper() for species in taxa if is_an_oak(species)])
+print(oaks_lc)
+
+**********************************************************************
+
+Testing oaks.py...
+
+oaks.py is a Python script file;
+
+checking for docstrings...
+
+Found one or more functions, but completely missing docstrings
+2 pts deducted for missing docstring for script, and .5 pt deducted per missing docstring for function
+
+Current Points = 88.5
+
+Output (only first 500 characters): 
+
+
+**********************************************************************
+{'Quercus robur', 'Quercus petraea', 'Quercus cerris'}
+{'Quercus robur', 'Quercus petraea', 'Quercus cerris'}
+{'QUERCUS ROBUR', 'QUERCUS PETRAEA', 'QUERCUS CERRIS'}
+{'QUERCUS ROBUR', 'QUERCUS PETRAEA', 'QUERCUS CERRIS'}
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.06305s
+
+======================================================================
+Inspecting script file cfexercises2.py...
+
+File contents are:
+
+**********************************************************************
+
+
+for j in range(12):
+    if j % 3 == 0:
+        print('hello!')
+
+for j in range(15):
+    if j % 5 == 3:
+        print('hello!')
+    elif j % 4 == 3:
+        print('hello')
+        z = z + 3
+
+z = 0 
+while z != 15:
+     print('hello')
+     z = z+ 3
+
+z = 12
+while z < 100: 
+    if z == 31:
+        for k in range(7):
+            print('hello')
+    elif z == 18:
+        print('hello')
+    z = z + 1
+**********************************************************************
+
+Testing cfexercises2.py...
+
+cfexercises2.py is a Python script file;
+
+checking for docstrings...
+
+No functions, but no script-level docstring either
+2 pts deducted
+
+Current Points = 86.5
+
+Output (only first 500 characters): 
+
+
+**********************************************************************
+hello!
+hello!
+hello!
+hello!
+hello!
+hello
+
+**********************************************************************
+
+Encountered error (or warning):
+Traceback (most recent call last):
+  File "cfexercises2.py", line 12, in <module>
+    z = z + 3
+NameError: name 'z' is not defined
+
+======================================================================
+Inspecting script file basic_io1.py...
+
+File contents are:
+
+**********************************************************************
+#######################
+## FILE INPUT
+#######################
+# Open a file for reading
+f = open('../Sandbox/test.txt', 'r')
+# use "i;plicit" for loop:
+# if the object is a file, python will cycle over lines
+for line in f:
+    print(line)
+
+#close the file 
+f.close()
+
+# Same example, skip blank lines 
+f = open('../Sandbox/test.txt', 'r')
+for line in f:
+    if len(line.strip()) > 0:
+        print(line)
+
+f.close()
+
+**********************************************************************
+
+Testing basic_io1.py...
+
+basic_io1.py is a Python script file;
+
+checking for docstrings...
+
+No functions, but no script-level docstring either
+2 pts deducted
+
+Current Points = 84.5
+
+Output (only first 500 characters): 
+
+
+**********************************************************************
+
+
+First Line
+
+Second Line
+
+
+
+
+
+
+
+Third Line
+
+
+
+
+
+
+
+Fourth Line
+First Line
+
+Second Line
+
+Third Line
+
+Fourth Line
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.08484s
+
+======================================================================
+Inspecting script file loops.py...
+
+File contents are:
+
+**********************************************************************
+# FOR loops in Python 
+for i in range(5):
+    print(i)
+
+my_list = [0, 2, "geronimo!", 3.0, True, False]
+for k in my_list:
+    print(k)
+
+total = 0
+summands = [0, 1, 11, 111, 1111]
+for s in summands:
+    total = total + s
+    print(total)
+
+# WHILE loops in Python
+z = 0
+while z < 100:
+    z = z  + 1
+    print(z)
+
+b = True
+while b:
+    print("GERONIMO! infinite loop! ctrl+c to stop!")
+ # ctrl + c to stop!   
+**********************************************************************
+
+Testing loops.py...
+
+loops.py is a Python script file;
+
+checking for docstrings...
+
+No functions, but no script-level docstring either
+2 pts deducted
+
+Current Points = 82.5
+
+Output (only first 500 characters): 
+
+
+**********************************************************************
+0
+1
+2
+3
+4
+0
+2
+geronimo!
+3.0
+True
+False
+0
+1
+12
+123
+1234
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+GERONIMO! infinite loop! ctrl+c to stop!
+GERONIMO! infinite loop! ctrl+c to stop!
+GERONIMO! infinite loop! ctrl+c to stop!
+GERONIMO! infinite loop! ctrl+c
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 10.50295s
+
+======================================================================
+Inspecting script file align_fasta.py...
+
+File contents are:
+
+**********************************************************************
+#!/usr/bin/env python3
+
+# Match with fasta input file 
+
+__appname__ = 'align_seq_fasta.py'
+__author__ = 'Olivia Haas o.haas@imperial.ac.uk'
+
+#Import sys
+import sys
+
+#seq2 = "ATCGCCGGATTACGGG"
+#seq1 = "CAATTCGGAT"
+
+# Assign the longer sequence s1, and the shorter to s2
+# l1 is length of the longest, l2 that of the shortest
+#first_fasta_file = open('../Data/E.coli.fasta')
+#seq1 = first_fasta_file.read()
+
+#second_fasta_file = open('../Data/407228412.fasta')
+#seq2 = second_fasta_file.read()
+#second_fasta_file.close()
+
+def definesquence(seq1, seq2):
+    l1 = len(seq1)
+    l2 = len(seq2)
+    if l1 >= l2:
+        s1 = seq1
+        s2 = seq2
+    else:
+        s1 = seq2
+        s2 = seq1
+        l1, l2 = l2, l1 # swap the two lengths
+    return s1, s2, l1, l2
+
+# A function that computes a score by returning the number of matches starting
+# from arbitrary startpoint (chosen by user)
+def calculate_score(s1, s2, l1, l2, startpoint):
+    matched = "" # to hold string displaying alignements
+    score = 0
+    for i in range(l2):
+        if (i + startpoint) < l1:
+            if s1[i + startpoint] == s2[i]: # if the bases match
+                matched = matched + "*"
+                score = score + 1
+            else:
+                matched = matched + "-"
+
+    # some formatted output
+    print("." * startpoint + matched)           
+    print("." * startpoint + s2)
+    print(s1)
+    print(score) 
+    print(" ")
+
+    return score
+
+# Test the function with some example starting points:
+# calculate_score(s1, s2, l1, l2, 0)
+# calculate_score(s1, s2, l1, l2, 1)
+# calculate_score(s1, s2, l1, l2, 5)
+
+# now try to find the best match (highest score) for the two sequences
+my_best_align = None
+my_best_score = -1
+
+def calculatebestscore(s1, s2, l1, l2, i):
+    for i in range(l1): # Note that you just take the last alignment with the highest score
+        z = calculate_score(s1, s2, l1, l2, i)
+        if z > my_best_score:
+            my_best_align = "." * i + s2 # think about what this is doing!
+            my_best_score = z 
+print(my_best_align)
+print(s1)
+print("Best score:", my_best_score)
+
+# open default fasta files 
+
+
+def main(argv):
+    if len(argv) == 1: 
+        # open default fasta files 
+        first_fasta_file = open('../Data/E.coli.fasta')
+        seq1 = first_fasta_file.read()
+        first_fasta_file.close()
+
+        second_fasta_file = open('../Data/407228412.fasta')
+        seq2 = second_fasta_file.read()
+        second_fasta_file.close()
+    elif len(argv) == 2: 
+        print("Missing an input file")
+        return None
+    elif len(argv) == 3:
+        first_fasta_file = read.fasta(argv[2])
+        seq1 = first_fasta_file.read()
+        first_fasta_file.close()
+
+        second_fasta_file = read.fasta(argv[3])
+        seq2 = second_fasta_file.read()
+        second_fasta_file.close()
+
+
+**********************************************************************
+
+Testing align_fasta.py...
+
+align_fasta.py is a Python script file;
+
+checking for docstrings...
+
+Found one or more functions, but completely missing docstrings
+2 pts deducted for missing docstring for script, and .5 pt deducted per missing docstring for function
+
+Current Points = 78.5
+
+Output (only first 500 characters): 
+
+
+**********************************************************************
+None
+
+**********************************************************************
+
+Encountered error (or warning):
+Traceback (most recent call last):
+  File "align_fasta.py", line 73, in <module>
+    print(s1)
+NameError: name 's1' is not defined
+
+======================================================================
+Inspecting script file dictionary.py...
+
+File contents are:
+
+**********************************************************************
+taxa = [ ('Myotis lucifugus','Chiroptera'),
+         ('Gerbillus henleyi','Rodentia',),
+         ('Peromyscus crinitus', 'Rodentia'),
+         ('Mus domesticus', 'Rodentia'),
+         ('Cleithrionomys rutilus', 'Rodentia'),
+         ('Microgale dobsoni', 'Afrosoricida'),
+         ('Microgale talazaci', 'Afrosoricida'),
+         ('Lyacon pictus', 'Carnivora'),
+         ('Arctocephalus gazella', 'Carnivora'),
+         ('Canis lupus', 'Carnivora'),
+        ]
+
+
+Chiroptera = [] 
+for i in taxa:
+        if i[1] =='Chiroptera':
+                Chiroptera = i[0]
+                print("The order Chiroptera has the following set of species :", Chiroptera)
+
+Rodentia = [] 
+for i in taxa:
+        if i[1] =='Rodentia':
+                Rodentia = i[0]
+                print("The order Rodentia has the following set of species :", Rodentia)
+
+Afrosoricida = [] 
+for i in taxa:
+        if i[1] =='Afrosoricida':
+                Afrosoricida = i[0]
+                print("The order Afrosoricida has the following set of species :", Afrosoricida)
+
+Carnivora = [] 
+for i in taxa:
+        if i[1] =='Carnivora':
+                Carnivora = i[0]
+                print("The order Carnivora has the following set of species :", Carnivora)
+
+
+# Write a short python script to populate a dictionary called taxa_dic 
+# derived from  taxa so that it maps order names to sets of taxa.
+# 
+# An example output is:
+#  
+# 'Chiroptera' : set(['Myotis lucifugus']) ... etc.
+#  OR,
+# 'Chiroptera': {'Myotis lucifugus'} ... etc
+
+**********************************************************************
+
+Testing dictionary.py...
+
+dictionary.py is a Python script file;
+
+checking for docstrings...
+
+No functions, but no script-level docstring either
+2 pts deducted
+
+Current Points = 76.5
+
+Output (only first 500 characters): 
+
+
+**********************************************************************
+The order Chiroptera has the following set of species : Myotis lucifugus
+The order Rodentia has the following set of species : Gerbillus henleyi
+The order Rodentia has the following set of species : Peromyscus crinitus
+The order Rodentia has the following set of species : Mus domesticus
+The order Rodentia has the following set of species : Cleithrionomys rutilus
+The order Afrosoricida has the following set of species : Microgale dobsoni
+The order Afrosoricida has the following set of species : Mi
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.07127s
+
+======================================================================
+Inspecting script file lc2.py...
+
+File contents are:
+
+**********************************************************************
+# Average UK Rainfall (mm) for 1910 by month
+# http://www.metoffice.gov.uk/climate/uk/datasets
+rainfall = (('JAN',111.4),
+            ('FEB',126.1),
+            ('MAR', 49.9),
+            ('APR', 95.3),
+            ('MAY', 71.8),
+            ('JUN', 70.2),
+            ('JUL', 97.1),
+            ('AUG',140.2),
+            ('SEP', 27.0),
+            ('OCT', 89.4),
+            ('NOV',128.4),
+            ('DEC',142.2),
+           )
+
+# (1) Use a list comprehension to create a list of month,rainfall tuples where
+# the amount of rain was greater than 100 mm.
+
+rainfall_more_than_100 = [i for i in rainfall if i[1] > 100 ]
+print(rainfall_more_than_100)
+ 
+# (2) Use a list comprehension to create a list of just month names where the
+# amount of rain was less than 50 mm. 
+rainfall_less_than_50 = [i[0] for i in rainfall if i[1] < 50 ]
+print(rainfall_less_than_50)
+
+# (3) Now do (1) and (2) using conventional loops (you can choose to do 
+# this before 1 and 2 !). 
+rainfall_more_than_100_loop = []
+for i in rainfall:
+    if i[1] > 100:
+       rainfall_more_than_100_loop.append(i)
+print(rainfall_more_than_100_loop)
+
+rainfall_less_than_50_loop = []
+for i in rainfall:
+    if i[1] < 50:
+       rainfall_less_than_50_loop.append(i[0])
+print(rainfall_less_than_50_loop)
+       
+# A good example output is:
+#
+# Step #1:
+# Months and rainfall values when the amount of rain was greater than 100mm:
+# [('JAN', 111.4), ('FEB', 126.1), ('AUG', 140.2), ('NOV', 128.4), ('DEC', 142.2)]
+# ... etc.
+
+
+**********************************************************************
+
+Testing lc2.py...
+
+lc2.py is a Python script file;
+
+checking for docstrings...
+
+No functions, but no script-level docstring either
+2 pts deducted
+
+Current Points = 74.5
+
+Output (only first 500 characters): 
+
+
+**********************************************************************
+[('JAN', 111.4), ('FEB', 126.1), ('AUG', 140.2), ('NOV', 128.4), ('DEC', 142.2)]
+['MAR', 'SEP']
+[('JAN', 111.4), ('FEB', 126.1), ('AUG', 140.2), ('NOV', 128.4), ('DEC', 142.2)]
+['MAR', 'SEP']
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.07603s
+
+======================================================================
+Inspecting script file basic_io3.py...
+
+File contents are:
+
+**********************************************************************
+######################
+# STORING OBJECTS
+######################
+# To save an object (even complex) for later use
+my_dictionary = {"a key": 11}
+
+import pickle
+
+f = open('../Sandbox/testp.p','wb') ## note the b: accept binary files 
+pickle.dump(my_dictionary, f)
+f.close()
+
+## Load the data again
+f = open('../Sandbox/testp.p', 'rb')
+another_dictionary = pickle.load(f)
+f.close()
+
+print(another_dictionary)
+**********************************************************************
+
+Testing basic_io3.py...
+
+basic_io3.py is a Python script file;
+
+checking for docstrings...
+
+No functions, but no script-level docstring either
+2 pts deducted
+
+Current Points = 72.5
+
+Output (only first 500 characters): 
+
+
+**********************************************************************
+{'a key': 11}
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.08347s
+
+======================================================================
+Inspecting script file control_flow.py...
+
+File contents are:
+
+**********************************************************************
+#!bin/bash
+# Author: Olivia o.haas20@imperial.ac.uk
+# Script@ boilerplate.sh
+# Desc: simple boilerplate for shell scripts
+# Arguments: none
+# Date: Oct 2020
+
+echo -e "\n This is a shell script! \n"
+
+#exit
+**********************************************************************
+
+Testing control_flow.py...
+
+control_flow.py is a Python script file;
+
+checking for docstrings...
+
+No functions, but no script-level docstring either
+2 pts deducted
+
+Current Points = 70.5
+
+Output (only first 500 characters): 
+
+
+**********************************************************************
+
+**********************************************************************
+
+Encountered error (or warning):
+  File "control_flow.py", line 8
+    echo -e "\n This is a shell script! \n"
+            ^
+SyntaxError: invalid syntax
+
+======================================================================
+Inspecting script file cfexercises1.py...
+
+File contents are:
+
+**********************************************************************
+##!/usr/bin/env python3
+
+__author__ = 'Olivia Haas (o.haas20@imperial.ac.uk)'
+__version__ = '0.0.1'
+
+import sys
+
+#What does each of the foo_x do def foo_1(x):
+def foo_1(x):
+    return x ** 0.5
+
+def foo_2(x,y):
+    if x > y: 
+        return x
+    return y 
+
+def foo_3(x, y, z):
+    if x > y:
+        tmp = y
+        y = x 
+        x=tmp 
+    if y > z:
+        tmp = z
+        z = y
+        y = tmp
+    return [x, y, z]
+
+def foo_4(x):
+    result = 1
+    for i in range(1, x + 1):
+        result = result * i
+    return result
+
+def foo_5(x): # a recursive function that calculates the factorial of x 
+    if x == 1:
+        return 1
+    return x * foo_5(x - 1)
+
+def foo_6(x): # Calculate the factorial of x in a different way
+    facto = 1
+    while x >= 1:
+        facto = facto * x 
+        x = x - 1
+    return facto 
+
+def main(argv):
+    print(foo_1(10))
+    print(foo_2(20, 10))
+    print(foo_3(30, 20, 10))
+    print(foo_4(10))
+    print(foo_5(50))
+    print(foo_6(20))
+    return 0
+
+if (__name__ == "__main__"):
+    status = main(sys.argv)
+    sys.exit(status)
+
+**********************************************************************
+
+Testing cfexercises1.py...
+
+cfexercises1.py is a Python script file;
+
+checking for docstrings...
+
+Found one or more functions, but completely missing docstrings
+2 pts deducted for missing docstring for script, and .5 pt deducted per missing docstring for function
+
+Current Points = 64.5
+
+Output (only first 500 characters): 
+
+
+**********************************************************************
+3.1622776601683795
+20
+[20, 10, 30]
+3628800
+30414093201713378043612608166064768844377641568960512000000000000
+2432902008176640000
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.06296s
+
+======================================================================
+Inspecting script file basic_csv.py...
+
+File contents are:
+
+**********************************************************************
+import csv
+
+# Read a file containing:
+# 'Species', 'Infraorder', 'Family', 'Distribution', 'Body mass male (kg)'
+f = open('../Data/testcsv.csv', 'r')
+
+csvread = csv.reader(f)
+temp = []
+for row in csvread: 
+    temp.append(tuple(row))
+    print(row)
+    print("The Species is", row[0])
+
+f.close()
+
+    #write a file containing only species name and Body mass
+f = open('../Data/testcsv.csv', 'r')
+g = open('../Data/bodymass.csv','w')
+
+csvread = csv.reader(f)
+csvwrite = csv.writer(g)
+for row in csvread:
+        print(row)
+        csvwrite.writerow([row[0], row[4]])
+    
+f.close()
+g.close()
+**********************************************************************
+
+Testing basic_csv.py...
+
+basic_csv.py is a Python script file;
+
+checking for docstrings...
+
+No functions, but no script-level docstring either
+2 pts deducted
+
+Current Points = 62.5
+
+Output (only first 500 characters): 
+
+
+**********************************************************************
+['Species', 'Infraorder', 'Family', 'Distribution', 'Body mass male (Kg)']
+The Species is Species
+['Daubentonia_madagascariensis', 'Chiromyiformes ', 'Daubentoniidae', 'Madagascar', '2.7']
+The Species is Daubentonia_madagascariensis
+['Allocebus_trichotis', 'Lemuriformes', 'Cheirogaleidae', 'Madagascar', '0.1']
+The Species is Allocebus_trichotis
+['Avahi_laniger', 'Lemuriformes', 'Indridae', 'America', '1.03']
+The Species is Avahi_laniger
+['Avahi_occidentalis', 'Lemuriformes', 'Indridae', 'Madagasc
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.08231s
+
+======================================================================
+Inspecting script file align_seqs.py...
+
+File contents are:
+
+**********************************************************************
+# Two example sequences to match
+#seq2 = "ATCGCCGGATTACGGG"
+#seq1 = "CAATTCGGAT"
+
+# Assign the longer sequence s1, and the shorter to s2
+# l1 is length of the longest, l2 that of the shortest
+
+with open('../Data/dnasequence.txt', 'r') as f:
+    seqlist = f.read().splitlines()
+print(seqlist)
+
+seq1 = seqlist[0]
+seq2 = seqlist[1]
+
+
+l1 = len(seq1)
+l2 = len(seq2)
+if l1 >= l2:
+    s1 = seq1
+    s2 = seq2
+else:
+    s1 = seq2
+    s2 = seq1
+    l1, l2 = l2, l1 # swap the two lengths
+
+# A function that computes a score by returning the number of matches starting
+# from arbitrary startpoint (chosen by user)
+def calculate_score(s1, s2, l1, l2, startpoint):
+    matched = "" # to hold string displaying alignements
+    score = 0
+    for i in range(l2):
+        if (i + startpoint) < l1:
+            if s1[i + startpoint] == s2[i]: # if the bases match
+                matched = matched + "*"
+                score = score + 1
+            else:
+                matched = matched + "-"
+
+    # some formatted output
+    print("." * startpoint + matched)           
+    print("." * startpoint + s2)
+    print(s1)
+    print(score) 
+    print(" ")
+
+    return score
+
+# Test the function with some example starting points:
+# calculate_score(s1, s2, l1, l2, 0)
+# calculate_score(s1, s2, l1, l2, 1)
+# calculate_score(s1, s2, l1, l2, 5)
+
+# now try to find the best match (highest score) for the two sequences
+my_best_align = None
+my_best_score = -1
+
+for i in range(l1): # Note that you just take the last alignment with the highest score
+    z = calculate_score(s1, s2, l1, l2, i)
+    if z > my_best_score:
+        my_best_align = "." * i + s2 # think about what this is doing!
+        my_best_score = z 
+print(my_best_align)
+print(s1)
+print("Best score:", my_best_score)
+
+my_best_score_str = str(my_best_score)
+my_best_align_str = str(my_best_align)
+
+f = open('../Results/bestresultsDNAalign.txt', 'w')
+f.write("For the sequences : " + seq1 + "and " + seq2 + '\n' + "The best align is :" + my_best_align_str + '\n' + "The best score is: " + my_best_score_str)
+f.close()
+
+**********************************************************************
+
+Testing align_seqs.py...
+
+align_seqs.py is a Python script file;
+
+checking for docstrings...
+
+Found one or more functions, but completely missing docstrings
+2 pts deducted for missing docstring for script, and .5 pt deducted per missing docstring for function
+
+Current Points = 60.0
+
+Output (only first 500 characters): 
+
+
+**********************************************************************
+
+**********************************************************************
+
+Encountered error (or warning):
+Traceback (most recent call last):
+  File "align_seqs.py", line 8, in <module>
+    with open('../Data/dnasequence.txt', 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '../Data/dnasequence.txt'
+
+======================================================================
+Inspecting script file lc1.py...
+
+File contents are:
+
+**********************************************************************
+birds = ( ('Passerculus sandwichensis','Savannah sparrow',18.7),
+          ('Delichon urbica','House martin',19),
+          ('Junco phaeonotus','Yellow-eyed junco',19.5),
+          ('Junco hyemalis','Dark-eyed junco',19.6),
+          ('Tachycineata bicolor','Tree swallow',20.2),
+         )
+
+#(1) Write three separate list comprehensions that create three different
+# lists containing the latin names, common names and mean body masses for
+# each species in birds, respectively. 
+
+latin_name = [i[0] for i in birds ]
+print(latin_name)
+common_name = [i[1] for i in birds ]
+print(common_name)
+body_mass = [i[2] for i in birds ]
+print(body_mass)
+# (2) Now do the same using conventional loops (you can choose to do this 
+# before 1 !). 
+
+latin_name_loop = []
+
+for i in birds: 
+    latin_name_loop.append(i[0])
+print(latin_name_loop)
+
+common_name_loop = []
+
+for i in birds: 
+    common_name_loop.append(i[1])
+print(common_name_loop)
+
+body_mass_loop = []
+
+for i in birds: 
+    body_mass_loop.append(i[2])
+print(body_mass_loop)
+# A nice example out out is:
+# Step #1:
+# Latin names:
+# ['Passerculus sandwichensis', 'Delichon urbica', 'Junco phaeonotus', 'Junco hyemalis', 'Tachycineata bicolor']
+# ... etc.
+ 
+**********************************************************************
+
+Testing lc1.py...
+
+lc1.py is a Python script file;
+
+checking for docstrings...
+
+No functions, but no script-level docstring either
+2 pts deducted
+
+Current Points = 58.0
+
+Output (only first 500 characters): 
+
+
+**********************************************************************
+['Passerculus sandwichensis', 'Delichon urbica', 'Junco phaeonotus', 'Junco hyemalis', 'Tachycineata bicolor']
+['Savannah sparrow', 'House martin', 'Yellow-eyed junco', 'Dark-eyed junco', 'Tree swallow']
+[18.7, 19, 19.5, 19.6, 20.2]
+['Passerculus sandwichensis', 'Delichon urbica', 'Junco phaeonotus', 'Junco hyemalis', 'Tachycineata bicolor']
+['Savannah sparrow', 'House martin', 'Yellow-eyed junco', 'Dark-eyed junco', 'Tree swallow']
+[18.7, 19, 19.5, 19.6, 20.2]
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.06262s
+
+======================================================================
+======================================================================
+Finished running scripts
+
+Ran into 5 errors
+
+======================================================================
+======================================================================
+
+FINISHED WEEKLY ASSESSMENT
+
+Current Points for the Week = 58.0
+
+NOTE THAT THESE ARE POINTS, NOT MARKS FOR THE WEEK!
