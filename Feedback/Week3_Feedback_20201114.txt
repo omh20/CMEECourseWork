@@ -1,0 +1,87 @@
+Starting code feedback for Olivia, Week3
+
+Current Points = 100
+
+Note that: 
+(1) Major sections begin with a double "====" line 
+(2) Subsections begin with a single "====" line 
+(3) Code output or text file content are printed within single "*****" lines 
+
+======================================================================
+======================================================================
+Your Git repo size this week is about 1.57 MiB on disk 
+
+PART 1: Checking project workflow...
+
+Found the following directories in parent directory: .git, Feedback, Week1, Week2
+
+Found the following files in parent directory: README.txt, .gitignore, Week2.zip
+
+Checking for key files in parent directory...
+
+Found .gitignore in parent directory, great! 
+
+Printing contents of .gitignore:
+
+**********************************************************************
+function have_any.*
+*.tmp
+.~ 
+age-height* 
+ *.log
+ *.aux 
+1.* 
+*.bjg 
+*.bbl 
+*evening* 
+*Untitled* 
+
+**********************************************************************
+
+Found README in parent directory, named: README.txt
+
+Printing contents of README.txt:
+
+**********************************************************************
+My CMEE Coursework Repository
+
+Author: Olivia Haas, o.haas@imperial.ac.uk
+
+Description: Git Repository for the CMEE BootCamp 2020. It contains the weekly practicals and code. The guidlines and material for the BootCamp can be found here: https://mhasoba.github.io/TheMulQuaBio/intro.html
+
+Languages: Engish (UK)
+
+Dependencies: python3, LaTeX, R
+
+
+Project structure and Usage: The material for each week can be found in the Week folders. Each folder has a Data Sandbox and Code Directory.
+
+
+**********************************************************************
+
+======================================================================
+Looking for the weekly directories...
+
+Found 2 weekly directories: Week1, Week2
+
+The Week3 directory will be assessed 
+
+======================================================================
+======================================================================
+PART 2: Checking weekly code and workflow...
+
+======================================================================
+======================================================================
+Finished running scripts
+
+Ran into 12 errors or warnings
+
+Total time used: 0.00s 
+
+======================================================================
+
+FINISHED WEEKLY ASSESSMENT
+
+Current Points for the Week = 100
+
+NOTE THAT THESE ARE POINTS, NOT MARKS FOR THE WEEK!
